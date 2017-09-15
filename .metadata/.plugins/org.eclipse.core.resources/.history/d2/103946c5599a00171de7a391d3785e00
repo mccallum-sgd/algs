@@ -1,0 +1,21 @@
+
+public class DataStats {
+
+    private int index = 0;
+    private double[] values;
+    
+    public DataStats(int N) {
+        values = new double[N];
+    }
+    
+    public double mean() {
+        double mean = 0;
+        for (double v: values)
+            mean += v;
+        return mean;
+    }
+    
+    public void append(double in) {
+        
+    }
+}

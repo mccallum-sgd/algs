@@ -1,0 +1,46 @@
+/**
+ * 
+ * @author sean-mccallum
+ *
+ */
+public class DataStats {
+
+    private int index = 0;
+    private double[] values;
+    
+    /**
+     * Initializes an array of size N.
+     * 
+     * 
+     * @param N amount of numbers you want to store
+     */
+    public DataStats(int N) {
+        values = new double[N];
+    }
+    
+    /**
+     * Computes the mean of the set of numbers added so far.
+     * 
+     * @return Mean of numbers added so far
+     */
+    public double mean() {
+        double total = 0;
+        for (double v: values)
+            total += v;
+        return total/(index+1);
+    }
+    
+    /**
+     * Appends the specified number to the set.
+     * 
+     * @param in number to append
+     * @return Mean of values added so far
+     * @throws ArrayIndexOutOfBoundsException if no space for number to append
+     */
+    public void append(double in) {
+        if (index < values.length) {
+            values[index] = in;
+            index++;
+        } else throw new ArrayIndexOutOfBoundsException();
+    }
+}

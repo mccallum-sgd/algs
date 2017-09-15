@@ -1,0 +1,17 @@
+import java.util.Random;
+
+public class ComputePi {
+    
+    private Random rand;
+
+    public static void main(String[] args) {
+        
+    }
+    
+    public double computer_pi (int n) {
+        
+        
+        return 0;
+    }
+
+}
