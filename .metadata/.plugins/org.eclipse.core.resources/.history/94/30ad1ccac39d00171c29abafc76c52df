@@ -1,0 +1,9 @@
+
+public class Test {
+
+    public static void main (String[] args) {
+        PercolationStats sts = new PercolationStats(10, 30);
+        StdOut.println("mean: " + sts.mean() + "\n" + 
+                       "stddev: " + sts.stddev());
+    }
+}

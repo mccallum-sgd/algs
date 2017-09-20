@@ -1,0 +1,29 @@
+import java.io.IOException;
+
+import edu.princeton.cs.algs4.Stopwatch;
+
+public class Test {
+    public static void main (String[] args) {
+        String output = "";
+        output += runTest(50, 10);
+        
+    }
+    
+    private static String runTest(int N, int T) {
+        Stopwatch s = new Stopwatch();
+        PercolationStats pstats = new PercolationStats(N, T);
+        double time = s.elapsedTime();
+        try {
+            Runtime.getRuntime().exec("cls");
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        
+        return "running time: " + s.elapsedTime() + "\n" + 
+               "mean: " + pstats.mean() + "\n" + 
+                "stddev: " + pstats.stddev() + "\n" + 
+                "confidencLow: " + pstats.confidenceLow() + "\n" + 
+                "confidenceHigh: " + pstats.confidenceHigh();
+    }
+}

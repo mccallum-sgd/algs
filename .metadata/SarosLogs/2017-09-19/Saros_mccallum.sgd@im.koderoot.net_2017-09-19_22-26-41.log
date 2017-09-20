@@ -22,3 +22,16 @@ DEBUG 2017-09-19 22:26:41,100 (XMPPConnectionService.java:398) mccallum.sgd@im.k
 DEBUG 2017-09-19 22:26:41,100 (DataTransferManager.java:467) used transport order for the current XMPP connection: [XMPP-Socks5-Transport, XMPP-IBB-Transport]
 DEBUG 2017-09-19 22:26:41,102 (SkypeManager.java:289) Refreshing Skype username cache...
 WARN  2017-09-19 22:26:49,128 (StunServiceImpl.java:420) received no response from STUN server stunserver.org/67.227.226.240:3478 at local address /192.168.1.103:0
+ERROR 2017-09-19 22:30:55,334 (XMPPConnectionService.java:101) XMPP connection error: 
+stream:error (conflict) text: Replaced by new connection
+	at org.jivesoftware.smack.PacketReader.parsePackets(PacketReader.java:247)
+	at org.jivesoftware.smack.PacketReader.access$000(PacketReader.java:48)
+	at org.jivesoftware.smack.PacketReader$1.run(PacketReader.java:76)
+ERROR 2017-09-19 22:30:55,344 (XMPPConnectionService.java:400)  new connection state == ERROR
+stream:error (conflict) text: Replaced by new connection
+	at org.jivesoftware.smack.PacketReader.parsePackets(PacketReader.java:247)
+	at org.jivesoftware.smack.PacketReader.access$000(PacketReader.java:48)
+	at org.jivesoftware.smack.PacketReader$1.run(PacketReader.java:76)
+DEBUG 2017-09-19 22:30:55,357 (XMPPConnectionService.java:398)  new connection state == NOT_CONNECTED
+DEBUG 2017-09-20 00:12:09,668 (IconUtils.java:197) color: RGB {255, 255, 255}
+DEBUG 2017-09-20 00:12:09,668 (IconUtils.java:208) create foreground icon with color RGB {0, 0, 0}

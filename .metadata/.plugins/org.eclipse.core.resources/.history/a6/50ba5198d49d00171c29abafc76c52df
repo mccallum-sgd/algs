@@ -1,0 +1,36 @@
+Collaboration
+Riley Beckham: 
+- He hasn't had much time to work on it and he's really scrambling so I wanted to help him as 
+much as I could
+- I clarified that we could use the libs provided
+- I pointed out some specifics in the directions
+- I asked some basic questions to get him thinking
+
+Connor C (can't remember last name): 
+- He was already almost finished when I talked to him
+- I was confused whether what I was doing was going to work so I reached out to him for clarification
+	- I said I used a boolean array, he confirmed he did as well
+	- I said I was confused about how to associate the sites from QuickFind with my Percolation sites when
+	I don't have access to the indexes, he clarified that I actually do (I misinterpreted the documentation)
+- Discussed whether sites with touching corner should be connected and we agreed that it wouldn't make sense.
+- Helped me narrow down where a bug was (forgot to exclude open()'s for already opened sites)
+
+Testing
+- QuickFindUF
+	- N = 25, T = 10:   0.031s
+	- N = 50, T = 20:  0.094s
+	- N = 50, T = 60: 0.223s
+	- N = 100, T = 60: 2.888s
+	- N = 200, T = 60: 43.078s
+
+
+- WeightedQuickUnionUF
+	- N = 25, T = 10:   0.047s
+	- N = 50, T = 20:  0.081s
+	- N = 50, T = 60: 0.359s
+	- N = 100, T = 60: 5.956s
+	- N = 200, T = 60: 77.748s
+	
+This was very rushed and from my results I can see that I did something very wrong (weightedquickunion should be significantly faster).
+I have to submit it now or I won't get any sleep but hopefully you can see I gave it a solid try.
+	

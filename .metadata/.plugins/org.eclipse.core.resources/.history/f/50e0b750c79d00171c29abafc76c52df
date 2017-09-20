@@ -1,0 +1,15 @@
+
+public class Test {
+    public String toString() {
+        String str = "";
+        for (int j = 0; j < grid.length; j++) {
+            boolean[] bs = grid[j];
+            str += j;
+            for (boolean b: bs)
+                if (b) str += "|";
+                else str += "-";
+            str += "\n";
+        }
+        return str;
+    }
+}
