@@ -1,0 +1,74 @@
+INFO  2017-09-18 21:00:29,698 (Saros.java:220) Starting Saros 14.10.31 running:
+  Java Version: 1.8.0_144
+  Java Vendor: Oracle Corporation
+  Eclipse Runtime Version: 3.12.0.v20160606-1342
+  Operating System: Windows 10 (10.0)
+  Hardware Architecture: amd64
+INFO  2017-09-18 21:00:29,729 (SarosContext.java:153) creating Saros runtime context...
+DEBUG 2017-09-18 21:00:29,778 (XMPPAccountStore.java:117) loading accounts from file: C:\Users\mccal\.saros\config.dat
+DEBUG 2017-09-18 21:00:30,008 (XMPPAccountStore.java:176) loaded 3 account(s)
+INFO  2017-09-18 21:00:30,239 (SarosContext.java:199) successfully created Saros runtime context
+DEBUG 2017-09-18 21:00:30,255 (DataTransferManager.java:467) used transport order for the current XMPP connection: [XMPP-Socks5-Transport, XMPP-IBB-Transport]
+INFO  2017-09-18 21:00:30,271 (PreferenceInitializer.java:50) initializing preference default values
+DEBUG 2017-09-18 21:00:30,312 (SarosAnnotation.java:117) resetting annotation colors
+DEBUG 2017-09-18 21:00:30,358 (Saros.java:430) skipping conversion of old XMPP accounts, because there are already new ones
+DEBUG 2017-09-18 21:00:34,396 (SharedDocumentProvider.java:77) SharedDocumentProvider created by Eclipse
+DEBUG 2017-09-18 21:00:36,742 (WhiteboardManager.java:194) WhiteboardManager instantiated
+DEBUG 2017-09-18 21:00:36,764 (DocumentRecord.java:93) Added Node: attr(150579003676145958) name=svg
+DEBUG 2017-09-18 21:00:36,991 (XMPPConnectionService.java:439) started Socks5 proxy on port: 7777 [listening on all interfaces]
+DEBUG 2017-09-18 21:00:37,681 (XMPPConnectionService.java:459) using autodetected addresses: [192.168.1.103, 2001:0:5ef5:79fb:4ae:1ab0:4758:7e0, fe80:0:0:0:4ae:1ab0:4758:7e0%net4, fe80:0:0:0:3127:2108:b5d2:828f%wlan3]
+DEBUG 2017-09-18 21:00:37,697 (XMPPConnectionService.java:398)  new connection state == CONNECTING
+DEBUG 2017-09-18 21:00:40,189 (XMPPConnectionService.java:398) mccallum.sgd@im.koderoot.net/Saros new connection state == CONNECTED
+DEBUG 2017-09-18 21:00:40,190 (DataTransferManager.java:467) used transport order for the current XMPP connection: [XMPP-Socks5-Transport, XMPP-IBB-Transport]
+DEBUG 2017-09-18 21:00:40,192 (SkypeManager.java:289) Refreshing Skype username cache...
+WARN  2017-09-18 21:00:48,993 (StunServiceImpl.java:420) received no response from STUN server stunserver.org/67.227.226.240:3478 at local address /192.168.1.103:0
+ERROR 2017-09-19 17:20:34,625 (XMPPConnectionService.java:101) XMPP connection error: 
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(Unknown Source)
+	at java.net.SocketInputStream.read(Unknown Source)
+	at sun.security.ssl.InputRecord.readFully(Unknown Source)
+	at sun.security.ssl.InputRecord.read(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.readRecord(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.readDataRecord(Unknown Source)
+	at sun.security.ssl.AppInputStream.read(Unknown Source)
+	at sun.nio.cs.StreamDecoder.readBytes(Unknown Source)
+	at sun.nio.cs.StreamDecoder.implRead(Unknown Source)
+	at sun.nio.cs.StreamDecoder.read(Unknown Source)
+	at java.io.InputStreamReader.read(Unknown Source)
+	at java.io.BufferedReader.fill(Unknown Source)
+	at java.io.BufferedReader.read1(Unknown Source)
+	at java.io.BufferedReader.read(Unknown Source)
+	at org.xmlpull.mxp1.MXParser.fillBuf(MXParser.java:2992)
+	at org.xmlpull.mxp1.MXParser.more(MXParser.java:3046)
+	at org.xmlpull.mxp1.MXParser.nextImpl(MXParser.java:1144)
+	at org.xmlpull.mxp1.MXParser.next(MXParser.java:1093)
+	at org.jivesoftware.smack.PacketReader.parsePackets(PacketReader.java:312)
+	at org.jivesoftware.smack.PacketReader.access$000(PacketReader.java:48)
+	at org.jivesoftware.smack.PacketReader$1.run(PacketReader.java:76)
+ERROR 2017-09-19 17:20:34,656 (XMPPConnectionService.java:400)  new connection state == ERROR
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(Unknown Source)
+	at java.net.SocketInputStream.read(Unknown Source)
+	at sun.security.ssl.InputRecord.readFully(Unknown Source)
+	at sun.security.ssl.InputRecord.read(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.readRecord(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.readDataRecord(Unknown Source)
+	at sun.security.ssl.AppInputStream.read(Unknown Source)
+	at sun.nio.cs.StreamDecoder.readBytes(Unknown Source)
+	at sun.nio.cs.StreamDecoder.implRead(Unknown Source)
+	at sun.nio.cs.StreamDecoder.read(Unknown Source)
+	at java.io.InputStreamReader.read(Unknown Source)
+	at java.io.BufferedReader.fill(Unknown Source)
+	at java.io.BufferedReader.read1(Unknown Source)
+	at java.io.BufferedReader.read(Unknown Source)
+	at org.xmlpull.mxp1.MXParser.fillBuf(MXParser.java:2992)
+	at org.xmlpull.mxp1.MXParser.more(MXParser.java:3046)
+	at org.xmlpull.mxp1.MXParser.nextImpl(MXParser.java:1144)
+	at org.xmlpull.mxp1.MXParser.next(MXParser.java:1093)
+	at org.jivesoftware.smack.PacketReader.parsePackets(PacketReader.java:312)
+	at org.jivesoftware.smack.PacketReader.access$000(PacketReader.java:48)
+	at org.jivesoftware.smack.PacketReader$1.run(PacketReader.java:76)
+DEBUG 2017-09-19 17:20:34,671 (XMPPConnectionService.java:398)  new connection state == NOT_CONNECTED
+DEBUG 2017-09-19 21:49:47,718 (IconUtils.java:197) color: RGB {255, 255, 255}
+DEBUG 2017-09-19 21:49:47,734 (IconUtils.java:208) create foreground icon with color RGB {0, 0, 0}
+DEBUG 2017-09-19 22:23:17,141 (UPnPServiceImpl.java:295) deleting existing port mappings

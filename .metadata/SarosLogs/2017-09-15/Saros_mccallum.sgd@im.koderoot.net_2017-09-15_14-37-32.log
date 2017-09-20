@@ -74,3 +74,4 @@ java.net.SocketException: Software caused connection abort: recv failed
 	at org.jivesoftware.smack.PacketReader.access$000(PacketReader.java:48)
 	at org.jivesoftware.smack.PacketReader$1.run(PacketReader.java:76)
 DEBUG 2017-09-15 14:56:05,094 (XMPPConnectionService.java:398)  new connection state == NOT_CONNECTED
+DEBUG 2017-09-15 16:48:53,307 (UPnPServiceImpl.java:295) deleting existing port mappings

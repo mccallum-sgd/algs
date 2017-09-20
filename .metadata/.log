@@ -107,3 +107,122 @@ org.eclipse.recommenders.utils.Logs$LogTraceException
 	at com.google.common.util.concurrent.AbstractIdleService$2$1.run(AbstractIdleService.java:54)
 	at com.google.common.util.concurrent.Callables$3.run(Callables.java:93)
 	at java.lang.Thread.run(Unknown Source)
+!SESSION 2017-09-18 21:00:26.934 -----------------------------------------------
+eclipse.buildId=4.6.3.M20170301-0400
+java.version=1.8.0_144
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.java.product -product org.eclipse.epp.package.java.product -product org.eclipse.epp.package.java.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.java.product -product org.eclipse.epp.package.java.product -data E:/Users/mccal/Documents/Repos/algs-labs -product org.eclipse.epp.package.java.product
+
+!ENTRY org.eclipse.egit.ui 2 0 2017-09-18 21:00:35.986
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\mccal'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY de.fu_berlin.inf.dpp 2 0 2017-09-18 21:00:48.994
+!MESSAGE received no response from STUN server stunserver.org/67.227.226.240:3478 at local address /192.168.1.103:0 (StunServiceImpl.java:420)
+
+!ENTRY org.eclipse.recommenders.types.rcp 1 4 2017-09-18 21:27:48.611
+!MESSAGE Full project indexing required:
+  [+] C:\Program Files\Java\jre1.8.0_144\lib\charsets.jar
+  [+] C:\Program Files\Java\jre1.8.0_144\lib\ext\access-bridge-64.jar
+  [+] C:\Program Files\Java\jre1.8.0_144\lib\ext\cldrdata.jar
+  [+] C:\Program Files\Java\jre1.8.0_144\lib\ext\dnsns.jar
+  [+] C:\Program Files\Java\jre1.8.0_144\lib\ext\jaccess.jar
+  [+] C:\Program Files\Java\jre1.8.0_144\lib\ext\jfxrt.jar
+  [+] C:\Program Files\Java\jre1.8.0_144\lib\ext\localedata.jar
+  [+] C:\Program Files\Java\jre1.8.0_144\lib\ext\nashorn.jar
+  [+] C:\Program Files\Java\jre1.8.0_144\lib\ext\sunec.jar
+  [+] C:\Program Files\Java\jre1.8.0_144\lib\ext\sunjce_provider.jar
+  [+] C:\Program Files\Java\jre1.8.0_144\lib\ext\sunmscapi.jar
+  [+] C:\Program Files\Java\jre1.8.0_144\lib\ext\sunpkcs11.jar
+  [+] C:\Program Files\Java\jre1.8.0_144\lib\ext\zipfs.jar
+  [+] C:\Program Files\Java\jre1.8.0_144\lib\jce.jar
+  [+] C:\Program Files\Java\jre1.8.0_144\lib\jfr.jar
+  [+] C:\Program Files\Java\jre1.8.0_144\lib\jsse.jar
+  [+] C:\Program Files\Java\jre1.8.0_144\lib\resources.jar
+  [+] C:\Program Files\Java\jre1.8.0_144\lib\rt.jar
+  [+] C:\Users\mccal\Documents\alg4\algs4.jar
+  [+] C:\Users\mccal\Documents\alg4\stdlib.jar
+
+!STACK 0
+org.eclipse.recommenders.utils.Logs$LogTraceException
+	at org.eclipse.recommenders.utils.Logs$LogTraceException.newTrace(Logs.java:381)
+	at org.eclipse.recommenders.utils.Logs.log(Logs.java:134)
+	at org.eclipse.recommenders.internal.types.rcp.ProjectTypesIndex.needsRebuild(ProjectTypesIndex.java:169)
+	at org.eclipse.recommenders.internal.types.rcp.ProjectTypesIndex.startUp(ProjectTypesIndex.java:122)
+	at com.google.common.util.concurrent.AbstractIdleService$2$1.run(AbstractIdleService.java:54)
+	at com.google.common.util.concurrent.Callables$3.run(Callables.java:93)
+	at java.lang.Thread.run(Unknown Source)
+
+!ENTRY de.fu_berlin.inf.dpp 4 0 2017-09-19 17:20:34.640
+!MESSAGE XMPP connection error:  (XMPPConnectionService.java:101)
+!STACK 0
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(Unknown Source)
+	at java.net.SocketInputStream.read(Unknown Source)
+	at sun.security.ssl.InputRecord.readFully(Unknown Source)
+	at sun.security.ssl.InputRecord.read(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.readRecord(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.readDataRecord(Unknown Source)
+	at sun.security.ssl.AppInputStream.read(Unknown Source)
+	at sun.nio.cs.StreamDecoder.readBytes(Unknown Source)
+	at sun.nio.cs.StreamDecoder.implRead(Unknown Source)
+	at sun.nio.cs.StreamDecoder.read(Unknown Source)
+	at java.io.InputStreamReader.read(Unknown Source)
+	at java.io.BufferedReader.fill(Unknown Source)
+	at java.io.BufferedReader.read1(Unknown Source)
+	at java.io.BufferedReader.read(Unknown Source)
+	at org.xmlpull.mxp1.MXParser.fillBuf(MXParser.java:2992)
+	at org.xmlpull.mxp1.MXParser.more(MXParser.java:3046)
+	at org.xmlpull.mxp1.MXParser.nextImpl(MXParser.java:1144)
+	at org.xmlpull.mxp1.MXParser.next(MXParser.java:1093)
+	at org.jivesoftware.smack.PacketReader.parsePackets(PacketReader.java:312)
+	at org.jivesoftware.smack.PacketReader.access$000(PacketReader.java:48)
+	at org.jivesoftware.smack.PacketReader$1.run(PacketReader.java:76)
+
+!ENTRY de.fu_berlin.inf.dpp 4 0 2017-09-19 17:20:34.656
+!MESSAGE  new connection state == ERROR (XMPPConnectionService.java:400)
+!STACK 0
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(Unknown Source)
+	at java.net.SocketInputStream.read(Unknown Source)
+	at sun.security.ssl.InputRecord.readFully(Unknown Source)
+	at sun.security.ssl.InputRecord.read(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.readRecord(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.readDataRecord(Unknown Source)
+	at sun.security.ssl.AppInputStream.read(Unknown Source)
+	at sun.nio.cs.StreamDecoder.readBytes(Unknown Source)
+	at sun.nio.cs.StreamDecoder.implRead(Unknown Source)
+	at sun.nio.cs.StreamDecoder.read(Unknown Source)
+	at java.io.InputStreamReader.read(Unknown Source)
+	at java.io.BufferedReader.fill(Unknown Source)
+	at java.io.BufferedReader.read1(Unknown Source)
+	at java.io.BufferedReader.read(Unknown Source)
+	at org.xmlpull.mxp1.MXParser.fillBuf(MXParser.java:2992)
+	at org.xmlpull.mxp1.MXParser.more(MXParser.java:3046)
+	at org.xmlpull.mxp1.MXParser.nextImpl(MXParser.java:1144)
+	at org.xmlpull.mxp1.MXParser.next(MXParser.java:1093)
+	at org.jivesoftware.smack.PacketReader.parsePackets(PacketReader.java:312)
+	at org.jivesoftware.smack.PacketReader.access$000(PacketReader.java:48)
+	at org.jivesoftware.smack.PacketReader$1.run(PacketReader.java:76)
+!SESSION 2017-09-19 22:25:46.195 -----------------------------------------------
+eclipse.buildId=4.6.3.M20170301-0400
+java.version=1.8.0_144
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.java.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.java.product
+
+!ENTRY org.eclipse.egit.ui 2 0 2017-09-19 22:26:35.192
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\mccal'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY de.fu_berlin.inf.dpp 2 0 2017-09-19 22:26:49.129
+!MESSAGE received no response from STUN server stunserver.org/67.227.226.240:3478 at local address /192.168.1.103:0 (StunServiceImpl.java:420)

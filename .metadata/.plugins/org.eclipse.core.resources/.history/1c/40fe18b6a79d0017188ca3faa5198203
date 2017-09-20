@@ -1,0 +1,43 @@
+
+public class PercolationStats {
+
+    private double T;
+    private double[] thresholds;
+    
+    
+    public PercolationStats(int N, int T) {
+        if (N <= 0 || T <= 0) throw new IllegalArgumentException("N and T must be positive integers.");
+        thresholds = new double[T];
+        for (int i = 0; i < T; i++) {
+            Percolation perc = new Percolation(N);
+            int count = 0;
+            while (!perc.percolates()) {
+                perc.open(StdRandom.uniform(0, N-1), StdRandom.uniform(0, N-1));
+                count++;
+            }
+            thresholds[i] = (double)count/N;
+        }
+    }
+    
+    public double mean() {
+        double total = 0.0;
+        for (double p: thresholds) 
+            total += p;
+        return total/T;
+    }
+    
+    public double stddev() {
+        double mean = mean();
+        for (int i = 0; i < T; i++) {
+            Math.pow(thresholds[i], mean)
+        }
+    }
+    
+    public double confidenceLow() {
+        
+    }
+    
+    public double confidenceHigh() {
+        
+    }
+}
