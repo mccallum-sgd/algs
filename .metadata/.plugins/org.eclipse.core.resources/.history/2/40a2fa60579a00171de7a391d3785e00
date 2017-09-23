@@ -1,9 +1,0 @@
-
-public class DataStats {
-
-    double[] values;
-    
-    public DataStats(int N) {
-        values = double[N];
-    }
-}

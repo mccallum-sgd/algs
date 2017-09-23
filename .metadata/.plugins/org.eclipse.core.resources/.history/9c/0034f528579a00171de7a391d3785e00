@@ -1,9 +1,0 @@
-
-public class DataStatsUser {
-
-    public static void main(String[] args) {
-        DataStats d = new DataStats(6);
-        
-    }
-
-}
