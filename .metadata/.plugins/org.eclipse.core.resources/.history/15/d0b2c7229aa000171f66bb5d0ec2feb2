@@ -51,6 +51,8 @@ public class LinkedQueue<Item> implements Iterable<Item> {
      * Adds the item to this queue.
      */
     public void enqueue(Item item) {
+        // How to stick the item at the end of the list?
+        // watch out for the special case of an empty list
         
     }
 
