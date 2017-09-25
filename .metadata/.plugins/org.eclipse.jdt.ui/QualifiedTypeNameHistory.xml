@@ -4,4 +4,6 @@
 <fullyQualifiedTypeName name="java.util.Arrays"/>
 <fullyQualifiedTypeName name="edu.princeton.cs.algs4.WeightedQuickUnionUF"/>
 <fullyQualifiedTypeName name="edu.princeton.cs.algs4.StdOut"/>
+<fullyQualifiedTypeName name="java.util.NoSuchElementException"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
 </qualifiedTypeNameHistroy>

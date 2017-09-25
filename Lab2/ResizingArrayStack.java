@@ -14,28 +14,45 @@
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
-public class ResizingArrayStack<Item> implements Iterable<Item> {
+public class ResizingArrayStack<Item extends Object> implements Iterable<Item> {
     private Item[] a;         // array of items
     private int n;            // number of elements on stack
 
-
     /**
      * Initializes an empty stack.
+     * 
      */
+    @SuppressWarnings("unchecked")
     public ResizingArrayStack() {
-        a = (Item[]) new Object[2]; //why is this Object type necessary?
-        // any other initialization?
+        /* why is this Object type necessary?
+        *  To cover the case of the generic type being a primitive 
+        *  in which case the compiler will now autobox the primitive
+        *  with the appropriate wrapper (so we can use object references).
+        *  
+        *  I actually didn't know that the compiler does this 
+        *  automatically  until now (hence the "auto" in 
+        *  autoboxing.. duh), I was thinking I would have to 
+        *  restrict this implementation to objects only or 
+        *  manually add the wrappers myself (whew!).
+        */
+        a = (Item[]) new Object[2];
+        // any other initializations? 
+        // no, javac will initialize n to 0 for me :)
     }
 
     /**
-     * Is this stack empty?
+     * Returns true if this stack contains no elements.
+     * 
+     * @return true if this stack contains no elements
      */
     public boolean isEmpty() {
-        // how to test?
+        return n == 0;
     }
 
     /**
      * Returns the number of items in the stack.
+     * 
+     * @return the number of items in the stack
      */
     public int size() {
         return n;
@@ -43,39 +60,48 @@ public class ResizingArrayStack<Item> implements Iterable<Item> {
 
 
     // resize the underlying array holding the elements
-    private void resize(int capacity) {
-
+    @SuppressWarnings("unchecked")
+    private synchronized void resize(int capacity) {
         // textbook implementation
+        // that's your new item array of size "capacity"
         Item[] temp = (Item[]) new Object[capacity];
-        // that's your new Item array of size "capacity"
-        
-        // how to copy the contents of _a_ into temp,
+        /* how to copy contents of _a_ into temp,
+         * this would be simpler and faster:
+         * System.arraycopy(a, 0, temp, 0, n); ,
+         * but for sake of implemenation...
+         */
+        for (int i = 0; i < n-1; i++)
+            temp[i] = a[i];
         // then make temp the active array?
+        a = temp;
     }
-
-
 
     /**
      * Adds the item to this stack.
      */
-    public void push(Item item) {
-        // How to stick the item at the end of the list?
+    public synchronized void push(Item item) {
         // Watch out for the special case of running out of space ( double size of array if necessary)
+        if (n >= a.length) resize(a.length*2);
+        // How to stick the item at the end of the list?
+        a[n++] = item;
     }
 
     /**
      * Removes and returns the item most recently added to this stack.
      */
-    public Item pop() {
+    public synchronized Item pop() {
         // How do you get the item from the end of the list, 
-
+        Item oldItem = a[n-1];
         // How to avoid loitering?
+        a[n--] = null;
         // when to shrink allocated array?
+        if (a.length >= n*4) resize(a.length/2); // I hold this truth to be self-evident: all array accesses are created equal
+        return oldItem;
     }
 
 
     /**
-     * Returns an iterator to this stack that iterates through the items in LIFO order.
+     * Returns a java.util.Iterator to this stack that iterates through the items in LIFO order.
      */
     public Iterator<Item> iterator() {
         return new ReverseArrayIterator();
@@ -94,12 +120,14 @@ public class ResizingArrayStack<Item> implements Iterable<Item> {
         }
         
         public boolean hasNext() {
-                // how to check?
+            return a[i+1] != null;
         }
 
         public Item next() {
             // how to walk along the list, starting from "top" of stack ?
             // watch out for next() call when there is no next item
+            if (!hasNext()) throw new NoSuchElementException();
+            return a[++i];
         }
     }
 

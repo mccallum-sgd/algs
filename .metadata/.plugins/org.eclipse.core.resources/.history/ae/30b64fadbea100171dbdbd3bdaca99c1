@@ -1,0 +1,128 @@
+/******************************************************************************
+ *  Compilation:  javac LinkedQueue.java
+ *  Execution:    java LinkedQueue < input.txt
+ *  Dependencies: StdIn.java StdOut.java
+ *  Data files:   http://algs4.cs.princeton.edu/13stacks/tobe.txt  
+ *
+ *  A generic queue, implemented using a singly-linked list.
+ *
+ *  % java Queue < tobe.txt 
+ *  to be or not to be (2 left on queue)
+ *
+ ******************************************************************************/
+
+import java.util.Iterator;
+import java.util.NoSuchElementException;
+
+public class LinkedQueue<Item> implements Iterable<Item> {
+    private int n;         // number of elements in queue
+    private Node first;    // front of queue
+    private Node last;     // back of queue
+
+    // helper linked list class
+    private class Node {
+        private Item item;
+        private Node next;
+        
+        private Node (Item item, Node next) {
+            this.item = item;
+            this.next = next;
+        }
+        
+        private void setNext(Node next) {this.next = next;}
+        private boolean hasNext() {return next != null;}
+    }
+
+    /*
+     * Default constructor will suffice because the initial values
+     * set by Java are all I need.
+     */
+    
+    
+    /**
+     * Returns true if this queue contains no elements.
+     * 
+     * @return true if this queue contains no elements
+     */
+    public boolean isEmpty() {
+        return first == null;
+    }
+
+    /**
+     * Returns the number of items in this queue.
+     * 
+     * @return the number of items in this queue
+     */
+    public int size() {
+        return n;
+    }
+
+
+    /**
+     * Adds the item to this queue.
+     */
+    public void enqueue(Item item) {
+        Node oldLast = last;
+        last = new Node(item, null);
+        oldLast.setNext(last);
+        
+        n++;
+    }
+
+    /**
+     * Removes and returns the item in this queue that was least recently added.
+     * 
+     * @return item that will be removed
+     * @throws java.util.NoSuchElementException if this queue is empty
+     */
+    public Item dequeue() {
+        // How do you get the item from the front of the list, 
+        // and ensure that the next element is now the front?
+        // Watch out for empty queue
+        if (isEmpty()) throw new NoSuchElementException();
+        Item oldItem = first.item;
+        if (first.next != null) first = first.next;
+        else first = null;
+        return oldItem;
+    }
+
+    /**
+     * Returns an java.util.Iterator that iterates over the items in this queue in FIFO order.
+     * 
+     */
+    public Iterator<Item> iterator()  {
+        return new ListIterator();
+    }
+
+    private class ListIterator implements Iterator<Item> {
+        private Node current = first;
+
+        public void remove()      { throw new UnsupportedOperationException();  }
+        
+        public boolean hasNext()  { 
+            return current.next != null;              
+        }
+
+        public Item next() {
+            if (!hasNext()) throw new NoSuchElementException();
+            return (current = current.next).item;
+        }
+    }
+
+
+    /**
+     * Unit tests the LinkedQueue data type.
+     */
+    public static void main(String[] args) {
+        LinkedQueue<String> queue = new LinkedQueue<String>();
+        while (!StdIn.isEmpty()) {
+            
+            String item = StdIn.readString();
+            if (!item.equals("-"))
+                queue.enqueue(item);
+            else if (!queue.isEmpty())
+                StdOut.print(queue.dequeue() + " ");
+        }
+        StdOut.println("(" + queue.size() + " left on queue)");
+    }
+}
