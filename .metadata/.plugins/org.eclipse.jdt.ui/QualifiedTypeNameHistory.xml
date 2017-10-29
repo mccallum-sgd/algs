@@ -1,15 +1,2 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="java.util.Random"/>
-<fullyQualifiedTypeName name="edu.princeton.cs.algs4.WeightedQuickUnionUF"/>
-<fullyQualifiedTypeName name="java.util.NoSuchElementException"/>
-<fullyQualifiedTypeName name="java.util.ArrayList"/>
-<fullyQualifiedTypeName name="java.util.List"/>
-<fullyQualifiedTypeName name="java.lang.NullPointerException"/>
-<fullyQualifiedTypeName name="BinarySearchDeluxe"/>
-<fullyQualifiedTypeName name="edu.princeton.cs.algs4.StdOut"/>
-<fullyQualifiedTypeName name="java.util.Arrays"/>
-<fullyQualifiedTypeName name="javax.swing.UIManager"/>
-<fullyQualifiedTypeName name="java.lang.reflect.Array"/>
-<fullyQualifiedTypeName name="StdOut"/>
-</qualifiedTypeNameHistroy>
+<qualifiedTypeNameHistroy/>

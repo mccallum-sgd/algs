@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename local variable &apos;N&apos; in &apos;Autocomplete.main(...)&apos; to &apos;n&apos;&#x0D;&#x0A;- Original project: &apos;Homework2&apos;&#x0D;&#x0A;- Original element: &apos;Autocomplete.main(String[]).N&apos;&#x0D;&#x0A;- Renamed element: &apos;N&apos;&#x0D;&#x0A;- Update references to refactored element" description="Rename local variable &apos;N&apos;" id="org.eclipse.jdt.ui.rename.local.variable" input="/&lt;{Autocomplete.java[Autocomplete~main~\[QString;@N!1637!1657!1641!1641!I!0!false" name="n" references="true" stamp="1508362274059" version="1.0"/>
-</session>

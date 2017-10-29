@@ -1,3 +1,4 @@
-GitRepositoriesView.GitDirectories=E\:\\Users\\mccal\\Documents\\Repos\\algs\\.git;
-GitRepositoriesView.GitDirectories.relative=.git;
+GitRepositoriesView.GitDirectories=F\:\\cs\\umt\\dsa\\algs\\.git;F\:\\cs\\umt\\dsa\\.git;
+GitRepositoriesView.GitDirectories.relative=algs\\.git;.git;
+RepositorySearchDialogSearchPath=F\:\\cs\\umt\\dsa\\algs
 eclipse.preferences.version=1
