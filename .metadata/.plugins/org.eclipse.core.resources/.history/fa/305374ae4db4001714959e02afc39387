@@ -1,0 +1,59 @@
+import java.util.Arrays;
+import java.util.Comparator;
+
+public class BinarySearchDeluxe {
+	
+	public static <Key> int firstIndexOf(Key[] a, Key key, Comparator<Key> comparator) {
+	    if (a == null || key == null || comparator == null) 
+            throw new NullPointerException();
+        int lo = 0, hi = a.length-1;
+        while (lo <= hi) {
+            int mid = lo + (hi-lo)/2;
+            int x = comparator.compare(key, a[mid]);
+            if ((mid == 0 || comparator.compare(key, a[mid-1]) > 0) && x == 0)
+                return mid;
+            else if (x > 0)
+                lo = mid+1;
+            else
+                hi = mid-1;
+        }
+        assert !Arrays.asList(a).contains(key) : Arrays.asList(a).indexOf(key);
+        return -1;
+    }
+	
+	public static <Key> int lastIndexOf(Key[] a, Key key, Comparator<Key> comparator) {
+	    if (a == null || key == null || comparator == null) 
+            throw new NullPointerException();
+        int lo = 0, hi = a.length-1;
+        while (lo <= hi) {
+            int mid = lo + (hi-lo)/2;
+            System.out.print(lo + ", " + mid + ", " + hi);
+            int x = comparator.compare(key, a[mid]);
+            if ((mid == a.length-1 || comparator.compare(key, a[mid+1]) < 0) && x == 0)
+                return mid;
+            else if (x < 0)
+                hi = mid-1;
+            else
+                lo = mid+1;
+        }
+        assert !Arrays.asList(a).contains(key) : Arrays.asList(a).indexOf(key);
+        return -1;
+	}
+	
+	public static void main(String[] args) {
+		char[] a = {'1','2','3','3','3','3','3','4','4','4','5','6','6','6'};
+		char key = 3;
+		Comparator<Character> comparator = new Comparator<Character>() {
+            @Override
+            public int compare(Character arg0, Character arg1) {
+                return arg0.compareTo(arg1);
+            }
+		};
+		System.out.println("Array: " + Arrays.toString(a) + "\n" +
+							"Search for: " + key + "\n" +
+							"First index: " + firstIndexOf(a, key, comparator) + "\n" +
+							"Last index: " + lastIndexOf(a, key, comparator)
+				);
+	}
+
+}

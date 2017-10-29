@@ -1,9 +1,0 @@
-
-public class Test {
-    public static void main (String[] args) {
-        PercolationStats pstats = new PercolationStats(300, 10);
-        System.out.println("mean: " + pstats.mean() + "\n" + 
-                            "stddev: " + pstats.stddev());
-    }
-    
-}

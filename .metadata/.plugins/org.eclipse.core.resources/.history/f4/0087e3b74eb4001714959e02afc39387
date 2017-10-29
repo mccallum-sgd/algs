@@ -1,0 +1,66 @@
+import java.util.Comparator;
+
+public class Term implements Comparable<Term> {
+	private String query;
+	private long weight;
+	
+	public Term (String query, long weight) {
+		this.query = query;
+		this.weight = weight;
+	}
+	
+	public static Comparator<Term> byReverseWeightOrder() {
+		return new Comparator<Term> () {
+			@Override
+			public int compare(Term o1, Term o2) 
+			{ return Long.compare(o2.weight, o1.weight); }
+		};
+	}
+	
+	public static Comparator<Term> byPrefixOrder(int r) {
+		int rr = r;
+		return new Comparator<Term>() {
+		    
+		    @Override
+		    public int compare(Term o1, Term o2) {
+		        int x = 0;
+		        if (rr < 0) throw new IllegalArgumentException();
+		        else if (rr > o1.query.length()) return -1;
+                else if (rr > o2.query.length()) return 1;
+		        String s1 = ,
+		                s2 = ;
+		        
+		        return o1.query.substring(0, rr).compareTo(o2.query.substring(0, rr));
+		    }
+			/*@Override
+			public int compare(Term o1, Term o2) {
+				int x = 0;
+				if (rr < 0) throw new IllegalArgumentException();
+				else if (rr > o1.query.length())
+				    return -1;
+				else if (rr > o2.query.length())
+				    return 1;
+				else
+    				for (int i = 0; i < rr; i++) {
+    					x = Character.compare(o1.query.charAt(i), o2.query.charAt(i));
+    					if (x != 0) return x;
+    				}
+				return x;
+			}*/
+		};
+	}
+	
+	public int compareTo (Term that) 
+	{ return query.compareTo(that.query); }
+	
+	public String toString() 
+	{ return weight + "\t" + query; }
+	
+	public static void main (String[] args) {
+		Term t1 = new Term("hi", 50),
+			 t2 = new Term("high", 30);
+		StdOut.println("Terms: " + t1 + ", " + t2 + "\n" +
+					   "By reverse weight: " + Term.byReverseWeightOrder().compare(t1, t2) + "\n" + 
+					   "By prefix order (3): " + Term.byPrefixOrder(3).compare(t1, t2));
+	}
+}

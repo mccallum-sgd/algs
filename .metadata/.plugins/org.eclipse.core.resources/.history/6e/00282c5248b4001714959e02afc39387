@@ -1,0 +1,74 @@
+/******************************************************************************
+ *  Name:     Sean McCallum
+ *
+ *  Hours to complete assignment (optional):
+ *
+ ******************************************************************************/
+
+Programming Assignment 3: Autocomplete
+
+
+/******************************************************************************
+ *  Describe how your firstIndexOf() method in BinarySearchDeluxe.java
+ *  finds the first index of a key that equals the search key.
+ *****************************************************************************/
+It first finds any element that matches the key using binary search. Then it 
+compares the key with the previous element from mid, and if it's not matching 
+then I know that mid is the first matching key, and I return it. If they don't 
+match, then I move hi to mid-1 and continue binary searching in the left partition.
+ Repeat until either the first index is found or lo and hi crossover (in which 
+ case return -1).
+
+/******************************************************************************
+ *  What is the order of growth of the number of compares (in the
+ *  worst case) that each of the operations in the Autocomplete
+ *  data type make, as a function of the number of terms n and the
+ *  number of matching terms m?
+ *
+ *  Recall that with order-of-growth notation, you should discard
+ *  leading coefficients and lower-order terms, e.g., m^2 + m log n.
+ *****************************************************************************/
+
+constructor: N for null-checking, N log N for Arrays.sort...
+N + N log N = ~ N log N
+
+allMatches(): ~ N + log N for call to numberOfMatches(), M log M for sorting by reverse weight...
+~ N + log N + M log M
+
+numberOfMatches():
+~ N + log N
+
+/******************************************************************************
+ *  Known bugs / limitations.
+ *****************************************************************************/
+For larger dictionaries than the input files we're using (i.e. real-world applications)
+my solution would be far too slow.
+
+/******************************************************************************
+ *  Describe whatever help (if any) that you received.
+ *  Don't include readings or lectures, but do include
+ *  any help from people (including course staff, lab TAs,
+ *  classmates, and friends) and attribute them by name.
+ *
+ *  Also include any resources (including the web) that you may
+ *  may have used in creating your design.
+ *****************************************************************************/
+I asked Connor C. about the performance of using a for loop to null-check the array 
+in Autocomplete's constructor, and he reminded me that it's fine because it isn't 
+the leading term in it's order-of-growth performance (i.e. N + N log N = ~ N log N).
+
+/******************************************************************************
+ *  Describe any serious problems you encountered.                    
+ *****************************************************************************/
+Surprisingly not much. I was stuck on the binary search for quite a while but after
+I sat down and drew some cases I was able to come up with an algorithm that works.
+
+/******************************************************************************
+ *  List any other comments here. Feel free to provide any feedback   
+ *  on how much you learned from doing the assignment, and whether    
+ *  you enjoyed doing it.                                             
+ *****************************************************************************/
+I know my performance isn't nearly as good as it could be but for the number of
+terms we're using it with now, it works fine. I wish I could've understood the 
+correct way to do it, I did try for quite a while.
+  

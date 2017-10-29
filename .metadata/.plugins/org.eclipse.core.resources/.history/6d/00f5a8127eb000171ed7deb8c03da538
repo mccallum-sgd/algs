@@ -1,0 +1,37 @@
+public class FSClient {
+
+	public static void main(String[] args) {
+		FixedSizedStack<String> stack = new FixedSizedStack<String>(parseArg(args));
+	    while (!StdIn.isEmpty()) {
+	        String item = StdIn.readString();
+	        if (!item.equals("-")) stack.push(item);
+	        else if (!stack.isEmpty()) StdOut.print(stack.pop() + " ");
+	        else if (item == "size") StdOut.print("size: " + stack.size());
+	    }
+	    StdOut.println("(" + stack.size() + " left on stack)");
+	}
+	
+	private static int parseArg(String[] args) {
+		if (args.length != 1) invalidArgs();
+		String arg = args[0];
+		int a = 0;
+		try {
+			a = Integer.parseInt(arg);
+		}
+		catch (NumberFormatException e) 
+		{ invalidArg(arg); }
+		if (a < 0) invalidArg(arg);
+		return a;
+	}
+	
+	private static void invalidArg(String arg) {
+		StdOut.println("Invalid argument: " + arg + "; positive integer expected.");
+		System.exit(0);
+	}
+	
+	private static void invalidArgs() {
+		StdOut.println("Invalid arguments; positive integer expected.");
+		System.exit(0);
+	}
+
+}

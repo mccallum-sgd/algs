@@ -1,0 +1,18 @@
+public class RandomizedBag<Item> {
+
+	private ResizingArray<Item> items;
+	
+	public RandomizedBag() {
+		items = new ResizingArray<Item>();
+	}
+	
+	public boolean isEmpty() {
+		
+	}
+	
+	
+	public static void main(String[] args) {
+		
+	}
+
+}

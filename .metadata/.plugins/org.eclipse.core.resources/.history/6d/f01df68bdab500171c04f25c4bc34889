@@ -1,0 +1,7 @@
+
+public class PQTester {
+
+    public static void main (String[] args) {
+        MaxPQ mpq = new MaxPQ();
+    }
+}

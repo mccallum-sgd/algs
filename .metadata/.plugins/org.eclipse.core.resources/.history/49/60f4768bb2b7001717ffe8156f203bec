@@ -1,0 +1,58 @@
+1)
+N			Avg Time (ns)
+100			    20161
+1,000		    67213
+10,000		  3791545
+100,000		 49588753
+1,000,000	109549282
+--------------------------------------------------------------
+What are reasonable values of "small" and "large" values of N?
+--------------------------------------------------------------
+This is a pretty ambiguous question but I'll take a stab at it.
+A reasonable small value of N would be 10,000 I would say, still
+extremely fast and pretty practical for most data-sets. If you're
+working with very large databases then 100,000 would probably be 
+the limit. 50ms is  about what you want to have to take with an 
+algorithm in real-world applications and making clients wait any 
+more than that is not ideal.
+
+2)
+MinSort construction
+N			Time (ns)
+100		  	    64395
+1,000		   537679
+10,000		  1613830
+100,000		  6731468
+1,000,000	 29146911
+
+MinSort removal
+N			Time (ns)
+100		  	   299853
+1,000		  2728696
+10,000		  6059467
+100,000		 22808925 
+1,000,000	213880437
+
+--------------------------------------------------------
+Do these agree with the expected rate of runtime growth?
+--------------------------------------------------------
+Yes, I would say it's linear. Each time I multiplied N
+by ten, I get a proportional increase in the runtime.
+In fact, it almost looks like the runtime is on average
+pretty close to 5N.
+
+HeapSort construction
+N			Time (ns)
+100		  	   36346
+1,000		  208197
+10,000		  721384
+100,000		 3570574 
+1,000,000	22802604
+
+HeapSort repair
+N			Time (ns)
+100		  	   204642
+1,000		   690965
+10,000		  7195270
+100,000		 25071447
+1,000,000	259800114

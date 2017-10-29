@@ -1,0 +1,36 @@
+public class RandomizedBag<Item> {
+
+	private StdRandom rand;
+	private ResizingArray<Item> items;
+	
+	public RandomizedBag() {
+		rand = new StdRandom();
+		items = new ResizingArray<Item>();
+	}
+	
+	public boolean isEmpty() {
+		return items.size() == 0;
+	}
+	
+	public int size() {
+		return items.size();
+	}
+	
+	public void put(Item item) {
+		items.add(item);
+	}
+	
+	public Item get() {
+		
+	}
+	
+	public Item sample() {
+		
+	}
+	
+	
+	public static void main(String[] args) {
+		
+	}
+
+}

@@ -1,0 +1,66 @@
+import java.util.ArrayList;
+import java.util.Iterator;
+
+public class FixedSizedStack<Item> implements Iterable<Item> {
+	private Deque<Item> dq;
+	private final int C;
+	
+	/**
+	 * Initializes a fixed stack with the specified capacity.
+	 * 
+	 * @param capacity
+	 * 			- the capacity of the stack
+	 * @throws IllegalArgumentException
+	 * 			- if the capacity is negative
+	 */
+	public FixedSizedStack (int capacity) {
+		if (capacity < 0)
+			throw new IllegalArgumentException();
+		dq = new Deque<Item>();
+		this.C = capacity;
+	}
+	
+	// remove last if capacity reached
+	private void trim() 
+	{ if (dq.size() > C) dq.removeLast(); }
+	
+	/**
+	 * Returns {@code true} if this stack contains no elements.
+	 * @return
+	 */
+	public boolean isEmpty() 
+	{ return dq.isEmpty(); }
+	
+	/**
+	 * 
+	 * @return
+	 */
+	public int size() 
+	{ return dq.size(); }
+	
+	/**
+	 * 
+	 * @param item
+	 */
+	public void push(Item item) {              
+		dq.addFirst(item);
+		trim();
+	}
+	
+	/**
+	 * 
+	 * @return
+	 */
+	public Item pop() 
+	{ return dq.removeFirst(); }
+	
+	/**
+	 * 
+	 */
+	public Iterator<Item> iterator() 
+	{ return dq.iterator(); }
+	
+	public static void main(String[] args) {
+		
+	}
+}

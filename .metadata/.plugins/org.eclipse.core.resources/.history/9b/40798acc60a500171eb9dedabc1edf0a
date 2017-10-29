@@ -1,0 +1,49 @@
+import java.util.Iterator;
+import java.util.NoSuchElementException;
+
+public class RandomizedBag<Item> {
+
+	private StdRandom rand;
+	private ResizingArray<Item> items;
+	
+	public RandomizedBag() {
+		items = new ResizingArray<Item>();
+	}
+	
+	public boolean isEmpty() {
+		return items.size() == 0;
+	}
+	
+	public int size() {
+		return items.size();
+	}
+	
+	public void put(Item item) {
+		if (item == null) throw new NullPointerException();
+		items.add(item);
+	}
+	
+	public Item get() {
+		if (isEmpty()) throw new NoSuchElementException();
+	}
+	
+	public Item sample() {
+		if (isEmpty()) throw new NoSuchElementException();
+	}
+	
+	
+	public Iterator<Item> iterator() {
+		return new Iterator() {
+
+			
+			
+		}
+	}
+	
+	private class 
+	
+	public static void main(String[] args) {
+		
+	}
+
+}

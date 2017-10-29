@@ -1,0 +1,18 @@
+import java.util.ArrayList;
+
+public class RandomizedBag<Item> {
+
+	private ArrayList<Item> items;
+	
+	public RandomizedBag() {
+		items = new ArrayList<Item>();
+	}
+	
+	
+	
+	
+	public static void main(String[] args) {
+		
+	}
+
+}

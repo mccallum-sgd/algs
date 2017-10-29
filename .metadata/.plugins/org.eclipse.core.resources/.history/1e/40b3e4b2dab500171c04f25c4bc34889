@@ -1,0 +1,14 @@
+import edu.princeton.cs.algs4.MaxPQ;
+
+public class PQTester {
+
+    public static void main (String[] args) {
+        
+        MaxPQ<Integer> mpq = new MaxPQ<Integer>();
+        
+    }
+    
+    private void randomFill() {
+        
+    }
+}

@@ -1,0 +1,18 @@
+import java.util.Comparator;
+
+import edu.princeton.cs.algs4.MinPQ;
+
+public class MyHeapSort<Item> {
+    
+    public void minSort(Item[] items, Comparator<Item> comparator) {
+        MinPQ<Item> q = new MinPQ<Item>(comparator);
+        for (Item i: items)
+            q.insert(i);
+        
+            
+    }
+    
+    public static void main(String[] args) {
+        
+    }
+}

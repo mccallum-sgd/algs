@@ -1,0 +1,46 @@
+import java.util.Arrays;
+
+public class Autocomplete {
+
+    private Term[] terms;
+
+    /**
+     * Constructs an Autocomplete
+     * @param terms
+     */
+    public Autocomplete(Term[] terms) {
+        if (terms == null)
+            throw new NullPointerException();
+        for (Term t : terms)
+            if (t == null)
+                throw new NullPointerException();
+        this.terms = terms;
+        Arrays.sort(this.terms);
+    }
+
+    public Term[] allMatches(String prefix) {
+        if (prefix == null)
+            throw new NullPointerException();
+        Term[] matches;
+        int first = BinarySearchDeluxe.firstIndexOf(terms, new Term(prefix, 0), Term.byPrefixOrder(prefix.length()));
+        int numMatches = numberOfMatches(prefix);
+        if (numMatches <= 0 || first == -1)
+            return matches = new Term[] {};
+        matches = new Term[numMatches];
+        matches[0] = terms[first];
+        for (int i = 1; i < matches.length; i++)
+            matches[i] = terms[++first];
+        Arrays.sort(matches, Term.byReverseWeightOrder());
+        return matches;
+    }
+
+    public int numberOfMatches(String prefix) {
+        if (prefix == null)
+            throw new NullPointerException();
+        Term key = new Term(prefix, 0);
+        int numMatches = BinarySearchDeluxe.lastIndexOf(terms, key, Term.byPrefixOrder(prefix.length())) + 1
+                - BinarySearchDeluxe.firstIndexOf(terms, key, Term.byPrefixOrder(prefix.length()));
+        return numMatches;
+    }
+
+}
